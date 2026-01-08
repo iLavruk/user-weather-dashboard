@@ -1,3 +1,4 @@
+import type { ReactElement } from "react";
 import { WeatherIcon } from "../lib/weather-codes";
 
 type Props = {
@@ -49,7 +50,7 @@ export default function HandleWeatherIcon({
   );
 }
 
-function renderIcon(icon: WeatherIcon): JSX.Element {
+function renderIcon(icon: WeatherIcon): ReactElement {
   switch (icon) {
     case WeatherIcon.SUN:
       return (

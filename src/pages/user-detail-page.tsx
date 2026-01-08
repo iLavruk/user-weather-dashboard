@@ -1,4 +1,5 @@
 import { useCallback, useEffect } from "react";
+import type { ReactElement } from "react";
 import { Link, useParams } from "react-router-dom";
 import HandleStateBlock from "../components/state-block";
 import HandleWeatherIcon from "../components/weather-icon";
@@ -90,7 +91,7 @@ export default function HandleUserDetailPage() {
   const isForecastDaysLoading =
     isForecastForUser && forecastStatus === AsyncStatus.LOADING;
 
-  const forecastCards: JSX.Element[] = [];
+  const forecastCards: ReactElement[] = [];
   if (isForecastForUser && forecastDays.length > EMPTY_LIST_LENGTH) {
     for (const day of forecastDays) {
       const visual = resolveWeather(day.weatherCode);

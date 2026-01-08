@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import type { ReactElement } from "react";
 import HandleStateBlock from "../components/state-block";
 import HandleUserCard from "../components/user-card";
 import { EMPTY_LIST_LENGTH, UNKNOWN_ERROR_MESSAGE } from "../lib/constants";
@@ -51,7 +52,7 @@ export default function HandleUserListPage() {
     return <HandleStateBlock>No users found.</HandleStateBlock>;
   }
 
-  const userCards: JSX.Element[] = [];
+  const userCards: ReactElement[] = [];
   for (const user of items) {
     userCards.push(<HandleUserCard key={user.id} user={user} />);
   }
